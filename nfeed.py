@@ -12,11 +12,15 @@ def getdata(str):
     for item in list:
         list2.append(item.get_text())
     return list2
-def display(list,root):
-    t1=Text(root)
+def display(list,root,var):
+    l1=Label(root,text=var)
+    l1.pack()
+    line="---------------------------------------------\n"
+    t1=Text(root,wrap=WORD)
     for item in list:
         t1.insert(INSERT,item)
         t1.insert(INSERT,'\n')
+        t1.insert(INSERT,line)
     t1.pack()
 root=tk.Tk()
 strhead="https://news.google.com/news/?ned=in&gl=IN&hl=en-IN"
@@ -25,5 +29,8 @@ strforyou="https://news.google.com/news/sfy?hl=en-IN&gl=IN&ned=in"
 list2=getdata(strhead)
 list3=getdata(strlocal)
 list4=getdata(strforyou)
-display(list2,root)
+tit1="Headlines"
+tit2="News for you"
+tit3="Local news"
+display(list2,root,tit1)
 root.mainloop()
