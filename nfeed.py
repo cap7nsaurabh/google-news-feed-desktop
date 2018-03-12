@@ -9,8 +9,12 @@ def getdata(str):
     list=[]
     list2=[]
     list=soup.find_all('a',class_="nuEeue hzdq5d ME7ew")
+    i=0
     for item in list:
         list2.append(item.get_text())
+        i=i+1
+        if i==20:
+            break
     return list2
 def display(list,root,var):
     l1=Label(root,text=var)
