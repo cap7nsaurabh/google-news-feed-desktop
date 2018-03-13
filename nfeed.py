@@ -9,6 +9,7 @@ def getdata(str):
     list=[]
     list2=[]
     list=soup.find_all('a',class_="nuEeue hzdq5d ME7ew")
+    i=0
     for item in list:
         list2.append(item.get_text())        
     return list2
