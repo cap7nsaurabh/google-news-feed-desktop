@@ -14,7 +14,7 @@ def getdata(str):
     return list2
 def display(list,stre):
     var=stre
-    l1.pack()
+    l1.config(text=var)
     t1.delete(1.0,END)
     line="---------------------------------------------\n"
     for item in list:
@@ -40,7 +40,9 @@ m1.menu.add_command(label="headline",command=lambda:display(list2,tit1))
 m1.menu.add_command(label="Local News",command=lambda:display(list3,tit3))
 m1.pack()
 var=StringVar()
-l1=Label(root,textvariable=var)
+var="Headline"
+l1=Label(root,text=var)
+l1.pack()
 t1=Text(root,wrap=WORD)
 display(list2,tit1)
 root.mainloop()
